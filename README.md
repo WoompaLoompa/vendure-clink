@@ -326,7 +326,7 @@ npm run dev            # Watch mode
 
 ## License
 
-MIT
+GPL v3
 
 ---
 
@@ -336,3 +336,8 @@ MIT
 - [Vendure](https://www.vendure.io/) — eCommerce platform
 - [Nostr](https://nostr.com/) — Decentralized protocol
 - [ShockNet](https://github.com/ShockNet) — Bitcoin Lightning infrastructure
+
+## Conversations
+- In this repo: https://github.com/WoompaLoompa/vendure-clink/discussions
+- In Vendure GH forum: https://github.com/vendurehq/vendure/discussions/5019
+- In Vendure Discord: https://discord.com/channels/1100672177260478564/1529747875364474921
