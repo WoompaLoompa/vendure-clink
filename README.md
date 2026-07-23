@@ -1,8 +1,10 @@
 # vendure-plugin-bitcoin-lightning-via-clink
 
+[![npm version](https://img.shields.io/npm/v/medusa-plugin-bitcoin-lightning-via-clink.svg)](https://www.npmjs.com/package/medusa-plugin-bitcoin-lightning-via-clink) 
 [![Vendure](https://img.shields.io/badge/Vendure-v3.x-blue)](https://www.vendure.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
+[![CLINK](https://img.shields.io/badge/Protocol-CLINK-orange.svg)](https://clinkme.dev)
 
 **Bitcoin Lightning payments for [Vendure](https://www.vendure.io/) via the [CLINK](https://clinkme.dev) protocol — Nostr-native static payment codes.**
 
