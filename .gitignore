@@ -4,6 +4,7 @@ dist/
 *.tgz
 .env
 coverage/
+wiki/
 
 # IDE
 .vscode/
