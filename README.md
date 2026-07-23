@@ -1,6 +1,6 @@
 # vendure-plugin-bitcoin-lightning-via-clink
 
-[![npm version](https://img.shields.io/npm/v/medusa-plugin-bitcoin-lightning-via-clink.svg)](https://www.npmjs.com/package/medusa-plugin-bitcoin-lightning-via-clink) 
+[![npm version](https://img.shields.io/npm/v/vendure-plugin-bitcoin-lightning-via-clink.svg)](https://www.npmjs.com/package/vendure-plugin-bitcoin-lightning-via-clink) 
 [![Vendure](https://img.shields.io/badge/Vendure-v3.x-blue)](https://www.vendure.io/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-blue)](https://www.typescriptlang.org/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0) 
