@@ -1,0 +1,25 @@
+{
+  "name": "clink-test-app",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd .. && npm run dev:test-app && cd test-app && ts-node src/index.ts",
+    "dev:worker": "ts-node src/worker.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "start:worker": "node dist/worker.js",
+    "migration:generate": "vendure migrate",
+    "migration:run": "vendure migrate:run"
+  },
+  "dependencies": {
+    "@vendure/core": "^3.0.0",
+    "@vendure/admin-ui-plugin": "^3.0.0",
+    "vendure-plugin-bitcoin-lightning-via-clink": "*",
+    "better-sqlite3": "^11.0.0",
+    "ts-node": "^10.9.0",
+    "typescript": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0"
+  }
+}

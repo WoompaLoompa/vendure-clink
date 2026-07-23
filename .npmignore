@@ -1,0 +1,33 @@
+# Source
+src/
+tsconfig.json
+tsconfig.build.json
+jest.config.ts
+
+# Development
+test-app/
+storefront-example/
+wiki/
+scripts/
+.github/
+.gitignore
+.npmignore
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test
+__tests__/
+*.spec.ts
+coverage/
+
+# Build artifacts (keep dist)
+*.tgz

@@ -1,0 +1,33 @@
+{
+  "name": "@vendure-clink/storefront",
+  "version": "0.1.0",
+  "description": "React component for accepting Bitcoin Lightning payments via CLINK in Vendure storefronts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.0",
+    "typescript": "^5.4.0"
+  },
+  "keywords": [
+    "vendure",
+    "bitcoin",
+    "lightning",
+    "clink",
+    "nostr",
+    "react",
+    "payment"
+  ],
+  "license": "MIT"
+}

@@ -1,0 +1,64 @@
+{
+  "name": "vendure-plugin-bitcoin-lightning-via-clink",
+  "version": "0.1.0",
+  "description": "Bitcoin Lightning payments for Vendure via the CLINK protocol (Nostr-native static payment codes)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "dev": "tsc -p tsconfig.build.json --watch",
+    "dev:test-app": "npm run build && rm -rf test-app/node_modules/vendure-plugin-bitcoin-lightning-via-clink && cp -r dist test-app/node_modules/vendure-plugin-bitcoin-lightning-via-clink",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint \"src/**/*.ts\"",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": [
+    "vendure",
+    "vendure-plugin",
+    "bitcoin",
+    "lightning",
+    "lightning-network",
+    "nostr",
+    "clink",
+    "payments",
+    "ecommerce",
+    "bolt11"
+  ],
+  "author": "WoompaLoompa",
+  "license": "GPL-3.0",
+  "peerDependencies": {
+    "@vendure/core": "^3.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "typeorm": "^0.3.0"
+  },
+  "dependencies": {
+    "@shocknet/clink-sdk": "^1.5.5",
+    "nostr-tools": "^2.15.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@vendure/cli": "^3.0.0",
+    "@vendure/core": "^3.0.0",
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "typeorm": "^0.3.0",
+    "ts-jest": "^29.4.12",
+    "typescript": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WoompaLoompa/vendure-clink.git"
+  },
+  "homepage": "https://github.com/WoompaLoompa/vendure-clink#readme",
+  "bugs": {
+    "url": "https://github.com/WoompaLoompa/vendure-clink/issues"
+  }
+}
