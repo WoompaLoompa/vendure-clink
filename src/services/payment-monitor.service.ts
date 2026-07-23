@@ -1,10 +1,11 @@
 import { Injectable, OnApplicationBootstrap, OnApplicationShutdown, Logger } from '@nestjs/common';
 import { ProcessContext, TransactionalConnection, RequestContext, EventBus, Channel } from '@vendure/core';
 import { ClinkSDK, decodeBech32 } from '@shocknet/clink-sdk';
-import { SimplePool, finalizeEvent, getPublicKey, generateSecretKey } from 'nostr-tools';
+import { SimplePool, finalizeEvent, getPublicKey, generateSecretKey, verifyEvent } from 'nostr-tools';
 import { encryptNip44, decryptNip44 } from './nip44';
 import { ClinkChannelConfig } from '../entities/clink-channel-config.entity';
 import { ClinkOffer } from '../entities/clink-offer.entity';
+import { extractPaymentHashFromBolt11, verifyPreimage } from '../utils/crypto';
 
 const SERVICE_NAME = 'PaymentMonitorService';
 
@@ -119,6 +120,11 @@ export class PaymentMonitorService implements OnApplicationBootstrap, OnApplicat
     if (!event || !event.content) return;
 
     try {
+      if (!verifyEvent(event)) {
+        this.logger.warn(`Invalid Nostr event signature: ${event.id?.substring(0, 8)}...`);
+        return;
+      }
+
       const secretKey = config.nostrSecretKey
         ? new Uint8Array(Buffer.from(config.nostrSecretKey, 'hex'))
         : null;
@@ -184,6 +190,16 @@ export class PaymentMonitorService implements OnApplicationBootstrap, OnApplicat
     if (offer.status === 'paid') {
       this.logger.log(`Offer ${offerId} already settled, ignoring receipt`);
       return;
+    }
+
+    if (payload.preimage && payload.bolt11) {
+      const paymentHash = extractPaymentHashFromBolt11(payload.bolt11);
+      if (paymentHash && !verifyPreimage(payload.preimage, paymentHash)) {
+        this.logger.warn(
+          `Preimage verification failed for offer ${offerId} — sha256(preimage) !== payment_hash`,
+        );
+        return;
+      }
     }
 
     offer.status = 'paid';

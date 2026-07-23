@@ -23,5 +23,9 @@ describe('ClinkPluginInitOptions', () => {
     it('should have empty nostrSecretKey', () => {
       expect(DEFAULT_CLINK_OPTIONS.nostrSecretKey).toBe('');
     });
+
+    it('should have empty webhookSecret', () => {
+      expect(DEFAULT_CLINK_OPTIONS.webhookSecret).toBe('');
+    });
   });
 });

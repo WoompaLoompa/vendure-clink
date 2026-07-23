@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.2.0 (2026-07-23)
+
+### Security
+
+- **CRITICAL**: Added HMAC-SHA256 signature verification for all webhook endpoints (`x-clink-signature` header)
+- **CRITICAL**: Added preimage verification — `sha256(preimage) === payment_hash` is now enforced before settling
+- Added BOLT11 invoice decoding to extract payment hash and amount for verification
+- Added amount validation — bolt11 invoice amount must match offer amount
+- Added Nostr event signature verification (`verifyEvent`) for relay payments
+- Added `webhookSecret` config option — **required when `httpFallback` is enabled**
+
+### Changed
+
+- Webhook endpoints now reject all requests without valid HMAC signature
+- Webhook endpoints now reject requests without preimage verification
+
 ## 0.1.0 (2026-07-23)
 
 ### Features

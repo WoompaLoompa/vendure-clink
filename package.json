@@ -1,6 +1,6 @@
 {
   "name": "vendure-plugin-bitcoin-lightning-via-clink",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Bitcoin Lightning payments for Vendure via the CLINK protocol (Nostr-native static payment codes)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

@@ -90,6 +90,10 @@ export class ClinkPlugin implements OnApplicationBootstrap {
     return ClinkPlugin.oracleService;
   }
 
+  static getInitOptions(): typeof DEFAULT_CLINK_OPTIONS {
+    return ClinkPlugin.initOptions;
+  }
+
   async onApplicationBootstrap() {
     const clinkService = this.moduleRef.get(ClinkService, { strict: false });
     const nostrKeyService = this.moduleRef.get(NostrKeyService, { strict: false });
